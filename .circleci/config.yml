@@ -13,7 +13,7 @@ jobs:
               echo " is from a forkThis."
               terraform init -backend=false -input=false terraform
             else
-              terraform init terraform
+              terraform init -backend=false -input=false terraform
             fi
       - run:
           name: Validate Terraform config
