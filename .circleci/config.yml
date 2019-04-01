@@ -10,10 +10,11 @@ jobs:
           # https://discuss.circleci.com/t/create-separate-steps-jobs-for-pr-forks-versus-branches/13419/2
           command: |
             if [[ $(echo "$CIRCLE_BRANCH" | grep -c "pull") -gt 0 ]]; then
-              echo "This is from a fork."
+              echo " is from a forkThis."
               terraform init -backend=false -input=false terraform
             else
-              terraform init -backend-config=terraform/backend.tfvars -input=false terraform
+#              terraform init -backend-config=terraform/backend.tfvars -input=false terraform
+              terraform init terraform
             fi
       - run:
           name: Validate Terraform config
