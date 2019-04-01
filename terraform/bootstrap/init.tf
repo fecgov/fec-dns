@@ -13,7 +13,7 @@ resource "aws_s3_bucket" "backend" {
 
 # 
 resource "aws_iam_user" "deployer" {
-  name = "circleci-deployer"
+  name = "circleci-deployer-jl"
 }
 
 resource "aws_iam_user_policy" "circleci_deployer_policy" {
