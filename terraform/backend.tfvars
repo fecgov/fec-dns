@@ -1,2 +1,2 @@
-bucket = "tts-dns-terraform-state"
+bucket = "fec-dns-test2"
 key = "terraform.tfstate"

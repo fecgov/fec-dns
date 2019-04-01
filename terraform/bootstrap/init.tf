@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "backend" {
-  bucket = "tts-dns-terraform-state"
+  bucket = "fec-dns-test2"
 
   versioning {
     enabled = true
