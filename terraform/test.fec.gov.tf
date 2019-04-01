@@ -22,23 +22,23 @@ resource "aws_route53_zone" "www_fec_gov_zone" {
   }
 }
 
-resource "aws_route53_zone" "stage_gov_us_zone" {
-  name = "stage.fec.gov"
-  tags {
-    Project = "dns"
-  }
-}
+# resource "aws_route53_zone" "stage_gov_us_zone" {
+#   name = "stage.fec.gov"
+#   tags {
+#     Project = "dns"
+#   }
+# }
 
-resource "aws_route53_record" "stage_gov_stage_gov_cname" {
-  zone_id = "${aws_route53_zone.stage_gov_us_zone.zone_id}"
-  name = "stage.fec.gov"
-  type = "A"
-  alias {
-    name = "d2p6ccc3xlipxg.cloudfront.net"
-    zone_id = "${local.cloudfront_zone_id}"
-    evaluate_target_health = false
-  }
-}
+# resource "aws_route53_record" "stage_gov_stage_gov_cname" {
+#   zone_id = "${aws_route53_zone.stage_gov_us_zone.zone_id}"
+#   name = "stage.fec.gov"
+#   type = "A"
+#   alias {
+#     name = "d2p6ccc3xlipxg.cloudfront.net"
+#     zone_id = "${local.cloudfront_zone_id}"
+#     evaluate_target_health = false
+#   }
+# }
 
 #resource "aws_route53_record" "transition_gov_transition_gov_cname" {
 #  zone_id = "${aws_route53_zone.transition_gov_us_zone.zone_id}"
@@ -70,6 +70,6 @@ output "www_fec_gov_ns" {
   value="${aws_route53_zone.www_fec_gov_zone.name_servers}"
 }
 
-output "stage_gov_us_zone_us_ns" {
-  value="${aws_route53_zone.stage_gov_us_zone.name_servers}"
-}
+# output "stage_gov_us_zone_us_ns" {
+#   value="${aws_route53_zone.stage_gov_us_zone.name_servers}"
+# }
