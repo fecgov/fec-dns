@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "backend" {
-  bucket = "fec-dns-test2"
+  bucket = "fec-dns-test3"
 
   versioning {
     enabled = true
