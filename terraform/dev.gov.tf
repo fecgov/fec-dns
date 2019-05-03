@@ -27,8 +27,8 @@ resource "aws_route53_record" "dev_gov_a_alias" {
   }
 }
 
-output "dev_gov_us_ns" {
- value="${aws_route53_zone.dev_gov_us_zone.name_servers}"
+output "dev_gov_ns" {
+ value="${aws_route53_zone.dev_gov_zone.name_servers}"
 }
 
 
