@@ -1,10 +1,17 @@
+variable "access_key" {}
+variable "secret_key" {}
+variable "region" {}
+
+
 provider "aws" {
   version = "~> 1.0"
-  region  = "us-east-1"
+  access_key = "${var.access_key}"
+  secret_key = "${var.secret_key}"
+  region = "${var.region}"
 }
 
 resource "aws_s3_bucket" "backend" {
-  bucket = "fec-dns-test3"
+  bucket = "fec-terraform-state"
 
   versioning {
     enabled = true
@@ -13,7 +20,7 @@ resource "aws_s3_bucket" "backend" {
 
 # 
 resource "aws_iam_user" "deployer" {
-  name = "circleci-deployer-jl"
+  name = "circleci-deployer"
 }
 
 resource "aws_iam_user_policy" "circleci_deployer_policy" {
