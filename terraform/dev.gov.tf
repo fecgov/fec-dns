@@ -16,24 +16,24 @@ resource "aws_route53_zone" "dev_gov_zone" {
 }
 
 
-#resource "aws_route53_record" "dev_gov_a_alias" {
-#  zone_id = "${aws_route53_zone.dev_gov_zone.zone_id}"
-#  name = "dev.fec.gov"
-#  type = "A"
-#  alias {
-#    name = "d353fgog3d4z1g.cloudfront.net"
-#    zone_id = "${local.cloudfront_zone_id}"
-#    evaluate_target_health = false
-#  }
-#}
+resource "aws_route53_record" "dev_gov_a_alias" {
+  zone_id = "${aws_route53_zone.dev_gov_zone.zone_id}"
+  name = "dev.fec.gov"
+  type = "A"
+  alias {
+    name = "d18qvbems6nrkf.cloudfront.net"
+    zone_id = "Z2FDTNDATAQYW2"
+    evaluate_target_health = false
+  }
+}
 
-#resource "aws_route53_record" "dev_gov_txt" {
-#  zone_id = "${aws_route53_zone.dev_gov_zone.zone_id}"
-#  name = "_acme-challenge.dev.fec.gov"
-#  type = "TXT"
-#  ttl = 300
-#  records = ["xMBMFNdBBfgK8cOXaIqfNTRgoEld4Zl1AUiW1gMahTs"]
-#}
+resource "aws_route53_record" "dev_gov_txt" {
+  zone_id = "${aws_route53_zone.dev_gov_zone.zone_id}"
+  name = "_acme-challenge.dev.fec.gov"
+  type = "TXT"
+  ttl = 300
+  records = ["pCw18pgTwC0elENQr80JfmQCsIc8MQw6etlIFxuM7Fs"]
+}
 
 output "dev_gov_ns" {
  value="${aws_route53_zone.dev_gov_zone.name_servers}"
