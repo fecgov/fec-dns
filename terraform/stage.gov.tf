@@ -4,7 +4,7 @@
 # Add TXT record (if needed) pointing to _acme-challenge (value from cloud.gov fec-stage-cdn-route service)
 
 
-resource "aws_route53_zone" "stage_stage_zone" {
+resource "aws_route53_zone" "stage_gov_zone" {
   name = "stage.fec.gov"
   tags {
     Project = "dns"
@@ -24,6 +24,6 @@ resource "aws_route53_zone" "stage_stage_zone" {
 #}
 
 
-output "stage_gov_us_zone_us_ns" {
-  value="${aws_route53_zone.stage_gov_us_zone.name_servers}"
+output "stage_gov_ns" {
+  value="${aws_route53_zone.stage_gov_zone.name_servers}"
 }
