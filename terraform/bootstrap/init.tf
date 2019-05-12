@@ -1,5 +1,8 @@
-# this will create 3 resouces: S3, circleci-deployer,policy
-# only need to run once at the beginning from local.
+# This script will create 3 resouces: S3 bucket, circleci-deployer user, and policy
+# Only need to run once at the beginning from local terraform.
+# Before run need to create .bootstrap.tfvars file with AWS credentials who can create user and S3
+# Then run: terraform apply -var-file=".bootstrap.tfvars"
+
 variable "access_key" {}
 variable "secret_key" {}
 variable "region" {}
