@@ -11,7 +11,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "backend" {
-  bucket = "fec-terraform-state"
+  bucket = "fec-dns-terraform-state"
 
   versioning {
     enabled = true
