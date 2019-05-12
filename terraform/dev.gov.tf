@@ -15,16 +15,16 @@ resource "aws_route53_zone" "dev_gov_zone" {
 }
 
 
-#resource "aws_route53_record" "dev_gov_a_alias" {
-#  zone_id = "${aws_route53_zone.dev_gov_zone.zone_id}"
-#  name = "dev.fec.gov"
-#  type = "A"
-#  alias {
-#    name = "d18qvbems6nrkf.cloudfront.net"
-#    zone_id = "Z2FDTNDATAQYW2"
-#    evaluate_target_health = false
-#  }
-#}
+resource "aws_route53_record" "dev_gov_a_alias" {
+  zone_id = "${aws_route53_zone.dev_gov_zone.zone_id}"
+  name = "dev.fec.gov"
+  type = "A"
+  alias {
+    name = "d18qvbems6nrkf.cloudfront.net"
+    zone_id = "Z2FDTNDATAQYW2"
+    evaluate_target_health = false
+  }
+}
 
 #resource "aws_route53_record" "dev_gov_txt" {
 #  zone_id = "${aws_route53_zone.dev_gov_zone.zone_id}"
