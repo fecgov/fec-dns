@@ -1,3 +1,5 @@
+# this will create 3 resouces: S3, circleci-deployer,policy
+# only need to run once at the beginning from local.
 variable "access_key" {}
 variable "secret_key" {}
 variable "region" {}

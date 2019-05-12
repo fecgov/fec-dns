@@ -4,7 +4,6 @@
 #
 # transition.fec.gov
 # www.fec.gov
-# 
 # and because you can't CNAME the root domain, Savvis/CenturyLink are 
 # pointing the root at an FEC server that HTTP redirects to www.fec.gov
 
