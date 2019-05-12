@@ -26,13 +26,13 @@ resource "aws_route53_record" "dev_gov_a_alias" {
   }
 }
 
-resource "aws_route53_record" "dev_gov_txt" {
-  zone_id = "${aws_route53_zone.dev_gov_zone.zone_id}"
-  name = "_acme-challenge.dev.fec.gov"
-  type = "TXT"
-  ttl = 300
-  records = ["pCw18pgTwC0elENQr80JfmQCsIc8MQw6etlIFxuM7Fs"]
-}
+#resource "aws_route53_record" "dev_gov_txt" {
+#  zone_id = "${aws_route53_zone.dev_gov_zone.zone_id}"
+#  name = "_acme-challenge.dev.fec.gov"
+# type = "TXT"
+#  ttl = 300
+#  records = ["pCw18pgTwC0elENQr80JfmQCsIc8MQw6etlIFxuM7Fs"]
+#}
 
 output "dev_gov_ns" {
  value="${aws_route53_zone.dev_gov_zone.name_servers}"
