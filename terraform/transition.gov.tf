@@ -12,16 +12,16 @@ resource "aws_route53_zone" "transition_gov_zone" {
 }
 
 
-#resource "aws_route53_record" "transition_gov_a_alias" {
-#  zone_id = "${aws_route53_zone.transition_gov_zone.zone_id}"
-#  name = "transition.fec.gov"
-#  type = "A"
-#  alias {
-#    name = "d2p6ccc3xlipxg.cloudfront.net"
-#    zone_id = "Z2FDTNDATAQYW2"
-#    evaluate_target_health = false
-#  }
-#}
+resource "aws_route53_record" "transition_gov_a_alias" {
+  zone_id = "${aws_route53_zone.transition_gov_zone.zone_id}"
+  name = "transition.fec.gov"
+  type = "A"
+  alias {
+    name = "d2p6ccc3xlipxg.cloudfront.net"
+    zone_id = "Z2FDTNDATAQYW2"
+    evaluate_target_health = false
+  }
+}
 
 
 output "transition_gov_ns" {
