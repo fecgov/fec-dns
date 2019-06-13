@@ -6,7 +6,7 @@
 
 resource "aws_route53_zone" "transition_gov_zone" {
   name = "transition.fec.gov"
-  tags {
+  tags = {
     Project = "dns"
  }
 }

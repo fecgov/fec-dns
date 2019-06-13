@@ -6,7 +6,7 @@
 
 resource "aws_route53_zone" "dev_gov_zone" {
   name = "dev.fec.gov"
-  tags {
+  tags = {
     Project = "dns"
  }
 }
