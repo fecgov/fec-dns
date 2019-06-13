@@ -6,8 +6,8 @@
 
 
 resource "aws_route53_zone" "open_fec_gov_zone" {
-  name = "open.fec.gov."
-  tags {
+  name = "open.fec.gov"
+  tags = {
     Project = "dns"
   }
 }
@@ -15,7 +15,7 @@ resource "aws_route53_zone" "open_fec_gov_zone" {
 
 resource "aws_route53_record" "open_fec_gov_api-stage_open_fec_gov_cname" {
   zone_id = "${aws_route53_zone.open_fec_gov_zone.zone_id}"
-  name    = "api-stage.open.fec.gov."
+  name    = "api-stage.open.fec.gov"
   type    = "CNAME"
   ttl     = 300
   records = ["api-open-fec-gov.domains.api.data.gov."]
@@ -24,7 +24,7 @@ resource "aws_route53_record" "open_fec_gov_api-stage_open_fec_gov_cname" {
 
 resource "aws_route53_record" "open_fec_gov_api_open_fec_gov_cname" {
   zone_id = "${aws_route53_zone.open_fec_gov_zone.zone_id}"
-  name    = "api.open.fec.gov."
+  name    = "api.open.fec.gov"
   type    = "CNAME"
   ttl     = 300
   records = ["api-open-fec-gov.domains.api.data.gov."]
