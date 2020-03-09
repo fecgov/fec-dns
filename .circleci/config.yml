@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs:
   plan:
     docker:
@@ -42,7 +42,7 @@ jobs:
           command: terraform apply -input=false -auto-approve terraform
 
 workflows:
-  version: 2
+  version: 2.1
 
   validate_and_deploy:
     jobs:
